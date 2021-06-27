@@ -8,7 +8,7 @@ public class Snack {
     private float cost;
     private int vendingmachineid;
 
-    public Snack(name, quantity, cost, vendingmachineid) {
+    public Snack(String name, int quantity, float cost, int vendingmachineid) {
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
