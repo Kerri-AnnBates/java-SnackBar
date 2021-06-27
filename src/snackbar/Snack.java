@@ -8,6 +8,13 @@ public class Snack {
     private float cost;
     private int vendingmachineid;
 
+    public Snack(name, quantity, cost, vendingmachineid) {
+        this.name = name;
+        this.quantity = quantity;
+        this.cost = cost;
+        this.vendingmachineid = vendingmachineid;
+    }
+
     public int getId() {
         return id;
     }
