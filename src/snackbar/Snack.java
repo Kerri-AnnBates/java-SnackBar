@@ -23,28 +23,28 @@ public class Snack {
         return name;
     }
 
-    public float getCost() {
-        return cost;
-    }
-
-    public int getVendingMachineId() {
-        return vendingmachineid;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public float getCost() {
+        return cost;
     }
 
     public void setCost(float cost) {
         this.cost = cost;
     }
 
+    public int getVendingMachineId() {
+        return vendingmachineid;
+    }
+
     public void setVendingMachineId(int vendingmachineid) {
         this.vendingmachineid = vendingmachineid;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     public void addQuantity(int quantity) {
