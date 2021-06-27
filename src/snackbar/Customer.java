@@ -4,11 +4,11 @@ public class Customer {
     private static int maxid = 0;
     private int id;
     private String name;
-    private double cashonhand;
+    private double cash;
 
-    public Customer(String name, double cashonhand) {
+    public Customer(String name, double cash) {
         this.name = name;
-        this.cashonhand = cashonhand;
+        this.cash = cash;
         this.id = maxid;
         maxid++;
     }
@@ -29,17 +29,17 @@ public class Customer {
 
     // add cash to cash on hand
     public void addCash(double cash) {
-        this.cashonhand += cash;
+        this.cash += cash;
     }
 
     // get cash on hand
-    public double getCashOnHand() {
-        return cashonhand;
+    public double getCash() {
+        return cash;
     }
 
     // buy snacks. Given the total cost of the snacks to be purchased, reduce the
     // cash on hand by that amount
     public void buySnacks(double totalCost) {
-        this.cashonhand -= totalCost;
+        this.cash -= totalCost;
     }
 }
