@@ -1,18 +1,20 @@
 package snackbar;
 
 public class Snack {
-    private int maxid;
+    private static int maxid = 0;
     private int id;
     private String name;
     private int quantity;
-    private float cost;
+    private double cost;
     private int vendingmachineid;
 
-    public Snack(String name, int quantity, float cost, int vendingmachineid) {
+    public Snack(String name, int quantity, double cost, int vendingmachineid) {
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
         this.vendingmachineid = vendingmachineid;
+        this.id = maxid;
+        maxid++;
     }
 
     public int getId() {
@@ -27,11 +29,11 @@ public class Snack {
         this.name = name;
     }
 
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -55,7 +57,7 @@ public class Snack {
         this.quantity = this.quantity - quantity;
     }
 
-    public float getTotalCost(int quantity) {
+    public double getTotalCost(int quantity) {
         return this.cost * quantity;
     }
 }

@@ -1,10 +1,17 @@
 package snackbar;
 
 public class Customer {
-    private int maxid;
+    private static int maxid = 0;
     private int id;
     private String name;
-    private float cashonhand;
+    private double cashonhand;
+
+    public Customer(String name, double cashonhand) {
+        this.name = name;
+        this.cashonhand = cashonhand;
+        this.id = maxid;
+        maxid++;
+    }
 
     // get id
     public int getId() {
@@ -21,18 +28,18 @@ public class Customer {
     }
 
     // add cash to cash on hand
-    public void addCash(float cash) {
+    public void addCash(double cash) {
         this.cashonhand += cash;
     }
 
     // get cash on hand
-    public float getCashOnHand() {
+    public double getCashOnHand() {
         return cashonhand;
     }
 
     // buy snacks. Given the total cost of the snacks to be purchased, reduce the
     // cash on hand by that amount
-    public void buySnacks(float totalCost) {
+    public void buySnacks(double totalCost) {
         this.cashonhand -= totalCost;
     }
 }
