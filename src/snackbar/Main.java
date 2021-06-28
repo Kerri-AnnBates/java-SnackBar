@@ -20,19 +20,23 @@ public class Main {
         Snack water = new Snack("Water", 20, 2.75, drink.getId());
 
         Snack[] snacks = { chips, chocolate, pretzel, soda, water };
+        VendingMachine[] machines = { food, drink, office };
 
+        // Customer Jane buys 3 Sodas
         jane.buySnacks(soda.getCost() * 3);
         soda.buySnack(3);
 
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 37.75
         System.out.println("Quantity of soda is " + soda.getQuantity()); // 21
 
+        // Jane buys 1 Pretzel
         jane.buySnacks(pretzel.getCost());
         pretzel.buySnack(1);
 
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 35.75
         System.out.println("Quantity of pretzels is " + pretzel.getQuantity()); // 29
 
+        // Bob buys 2 sodas
         bob.buySnacks(soda.getCost() * 2);
         soda.buySnack(2);
 
@@ -43,29 +47,39 @@ public class Main {
         jane.addCash(10);
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 45.75
 
+        // Jane buys 1 chocolate bar
         jane.buySnacks(chocolate.getCost());
         chocolate.buySnack(1);
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 44.75
         System.out.println("Quantity of chocolate is " + chocolate.getQuantity()); // 35
 
+        // Add 12 more pretzels
         pretzel.addQuantity(12);
         System.out.println("Quantity of pretzels is " + pretzel.getQuantity()); // 41
 
+        // Bob buys 3 pretzels
         bob.buySnacks(pretzel.getCost() * 3);
         pretzel.buySnack(3);
         System.out.println("Bob's cash on hand is " + bob.getCash()); // 22.14
         System.out.println("Quantity of soda is " + pretzel.getQuantity()); // 38
         System.out.println("-----------------------\n");
-        // For each snack display the following:
-        /*
-         * Name Vending Machine Name Quantity on hand Total cost of all of the
-         * quantities of this snack on hand
-         */
+
+        // Stretch
         for (Snack snack : snacks) {
+            String vmName = "";
+            double totalCost = snack.getQuantity() * snack.getCost();
+
+            for (VendingMachine vendingMachine : machines) {
+                if (vendingMachine.getId() == snack.getVendingMachineId()) {
+                    vmName = vendingMachine.getName();
+                    break;
+                }
+            }
+
             System.out.println("Snack: " + snack.getName());
-            // System.out.println("Vending Machine: " + snack.getVendingMachineId());
+            System.out.println("Vending Machine: " + vmName);
             System.out.println("Quantity: " + snack.getQuantity());
-            System.out.println("Total Cost: " + (snack.getQuantity() * snack.getCost()));
+            System.out.printf("Total Cost: $%,.2f\n", totalCost);
             System.out.println("-----------------------\n");
         }
     }
