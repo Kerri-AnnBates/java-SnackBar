@@ -60,4 +60,8 @@ public class Snack {
     public double getTotalCost(int quantity) {
         return this.cost * quantity;
     }
+
+    public static int getSnackCount() {
+        return maxid;
+    }
 }
