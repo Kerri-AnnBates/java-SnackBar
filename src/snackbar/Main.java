@@ -23,21 +23,21 @@ public class Main {
         VendingMachine[] machines = { food, drink, office };
 
         // Customer Jane buys 3 Sodas
-        jane.buySnacks(soda.getCost() * 3);
+        jane.buySnacks(soda.getTotalCost(3));
         soda.buySnack(3);
 
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 37.75
         System.out.println("Quantity of soda is " + soda.getQuantity()); // 21
 
         // Jane buys 1 Pretzel
-        jane.buySnacks(pretzel.getCost());
+        jane.buySnacks(pretzel.getTotalCost(1));
         pretzel.buySnack(1);
 
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 35.75
         System.out.println("Quantity of pretzels is " + pretzel.getQuantity()); // 29
 
         // Bob buys 2 sodas
-        bob.buySnacks(soda.getCost() * 2);
+        bob.buySnacks(soda.getTotalCost(2));
         soda.buySnack(2);
 
         System.out.println("Bob's cash on hand is " + bob.getCash()); // 28.14
@@ -48,7 +48,7 @@ public class Main {
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 45.75
 
         // Jane buys 1 chocolate bar
-        jane.buySnacks(chocolate.getCost());
+        jane.buySnacks(chocolate.getTotalCost(1));
         chocolate.buySnack(1);
         System.out.println("Jane's cash on hand is " + jane.getCash()); // 44.75
         System.out.println("Quantity of chocolate is " + chocolate.getQuantity()); // 35
@@ -58,7 +58,7 @@ public class Main {
         System.out.println("Quantity of pretzels is " + pretzel.getQuantity()); // 41
 
         // Bob buys 3 pretzels
-        bob.buySnacks(pretzel.getCost() * 3);
+        bob.buySnacks(pretzel.getTotalCost(3));
         pretzel.buySnack(3);
         System.out.println("Bob's cash on hand is " + bob.getCash()); // 22.14
         System.out.println("Quantity of soda is " + pretzel.getQuantity()); // 38
